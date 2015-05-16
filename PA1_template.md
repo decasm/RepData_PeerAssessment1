@@ -1,6 +1,11 @@
-# Reproducible Research: Peer Assessment 1
-Devon Smith  
-05/15/2015  
+---
+title: "Reproducible Research: Peer Assessment 1"
+author: "Devon Smith"
+date: "05/15/2015"
+output: 
+  html_document:
+    keep_md: true
+---
 
 ***
 
@@ -39,7 +44,7 @@ aggSum <- with(activity, aggregate(steps ~ date, FUN=sum))
 hist(aggSum$steps,breaks=20,col="lightblue", main="Steps Per Day (Histogram)",xlab="Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 - Calculate and report the mean and median of the total number of steps taken per day
 
@@ -67,7 +72,7 @@ meanPlot <- ggplot(data=aggMean, aes(interval, steps)) +
 print(meanPlot)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 - Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -119,7 +124,7 @@ aggSum <- with(activity2, aggregate(steps ~ date, FUN=sum))
 hist(aggSum$steps,breaks=20,col="lightblue", main="Steps Per Day w/imputed values (Histogram)",xlab="Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 ```r
 meanStepsPerDay <- mean(aggSum$steps)
@@ -178,7 +183,7 @@ meanPlot <- ggplot(data=aggMean, aes(interval, steps)) +
 print(meanPlot)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
 
 > There are obvious differences between the weekend and the weekdays.
 > They weekend has more steps on average in the middle of the day than do the
